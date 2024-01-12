@@ -9,11 +9,13 @@ console.log("Hello World")
 
 
 // get requests
-app.get("/",function(req,res){
+app.get("/", function (req, res) {
     // send files (ex: .html)
     res.sendFile(__dirname + "/views/index.html")
 })
 
+// app.use 
+app.use("/public", express.static(__dirname + "/public"))
 
 
 
@@ -39,6 +41,4 @@ app.get("/",function(req,res){
 
 
 
-
-
- module.exports = app;
+module.exports = app;
