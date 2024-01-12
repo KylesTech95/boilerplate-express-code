@@ -48,7 +48,11 @@ next();
     res.send({time:req.time})
 })
 
-
+// get params object
+app.get("/:word/echo",(req,res)=>{
+    const word = req.params
+    res.json({echo: word.word })
+})
 
 
 
