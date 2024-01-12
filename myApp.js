@@ -40,9 +40,14 @@ app.get("/json",function(req,res){
 })
 
 
+// chain middleware
+app.get("/now",(req,res,next)=>{
+req.time = new Date().toString();
+next();
+},(req,res)=>{
+    res.send({time:req.time})
+})
 
-
-  
 
 
 
