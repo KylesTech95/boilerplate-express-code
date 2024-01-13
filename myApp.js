@@ -68,6 +68,16 @@ app.get("/name",(req,res)=>{
     res.json({name: `${first} ${last}`})
 })
 
+// post names to form (req.body()) - This is the bridge between HTML form & terminal
+app.post("/name",(req,res)=>{
+
+    let body = {
+        first: req.body.first,
+        last: req.body.last
+    }
+    res.json({name: `${body.first} ${body.last}`})
+})
+
 
 
 
