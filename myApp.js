@@ -1,8 +1,13 @@
 require('dotenv').config()
+var bodyParser = require('body-parser')
 let express = require('express');
 let app = express();
 
 
+
+// query param input POST
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
 
 
 // middleware
@@ -55,7 +60,7 @@ app.get("/:word/echo",(req,res)=>{
 })
 
 
-// query param input
+// query param input GET
 app.get("/name",(req,res)=>{
     let first = req.query.first
     let last = req.query.last
